@@ -10,32 +10,28 @@
 ### Team Members
 - Member 1: [Nandana Sasikumar] - [GEC THRISSUR]
 - Member 2: [Archana.K ] - [GEC THRISSUR]
-- Member 3: [Cilla Elsa Binoy] - [College]
+- Member 3: [Cilla Elsa Binoy] - [GEC THRISSUR]
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://tink-her-hack-3-temp-phi.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+Medevo+ is a website providing advanced features for a better health facility navigation and easier approach to treatment of the users.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Lack of appropriate facility navigation in the health sector.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+By creating a website
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [Javascript]
+- [HTML,CSS]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
+
 
 ### Implementation
 For Software:
@@ -49,55 +45,34 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1] (Home Page)
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/a90677bb-af12-4c6c-ad14-0ba90b661878" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/dc9ee680-9368-429c-b480-cadaa56f5ef1" />
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![Screenshot2](Doctors' List)
+<img width="939" alt="image" src="https://github.com/user-attachments/assets/c8013585-17bb-4b6f-8694-64c9345dabf8" />
 
-For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+![Screenshot3] (Profile of chosen doctor)
+<img width="353" alt="image" src="https://github.com/user-attachments/assets/8c692df8-a7ad-45b0-b395-7951772c5d77" />
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+![Screenshot4] (First Aid)
+<img width="942" alt="image" src="https://github.com/user-attachments/assets/9fb5a1ba-75c0-4978-9c03-c611412f249c" />
 
-# Build Photos
-![Team](Add photo of your team here)
+![Screenshot5] (Vaccination Slot Booking)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/762140f0-8bd2-4761-8a24-c1ceac741bb2" />
+
+![Screenshots] (Help)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/e6f759e0-9dda-4f13-8c5a-0e2941281002" />
+
+
 
 
 ![Components](Add photo of your components here)
 *List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
----
 Made with ❤️ at TinkerHub
 
 
