@@ -54,11 +54,6 @@ For Software:
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e6f759e0-9dda-4f13-8c5a-0e2941281002" />
 
 
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
 Made with ❤️ at TinkerHub
 
 
