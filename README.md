@@ -30,20 +30,6 @@ For Software:
 - [Javascript]
 - [HTML,CSS]
 
-
-
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
-For Software:
-
 # Screenshots (Add at least 3)
 
 ![Screenshot1] (Home Page)
