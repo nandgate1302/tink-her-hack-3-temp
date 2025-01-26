@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaccination Slot Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .booking-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #073a70;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .booking-confirmation {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h2>Vaccination Slot Booking</h2>
+        <form id="vaccinationForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age Group</label>
+                <select id="age" name="age" required>
+                    <option value="">Select Age Group</option>
+                    <option value="0-5">0-5 Years</option>
+                    <option value="6-12">6-12 Years</option>
+                    <option value="13-18">13-18 Years</option>
+                    <option value="19-45">19-45 Years</option>
+                    <option value="46-60">46-60 Years</option>
+                    <option value="60+">60+ Years</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="vaccine">Vaccine Type</label>
+                <select id="vaccine" name="vaccine" required>
+                    <option value="">Select Vaccine</option>
+                    <option value="covid">COVID-19 Vaccine</option>
+                    <option value="flu">Flu Vaccine</option>
+                    <option value="mmr">MMR Vaccine</option>
+                    <option value="tdap">Tdap Vaccine</option>
+                    <option value="hepatitis">Hepatitis Vaccine</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+            
+            <button type="button" class="submit-btn" onclick="bookSlot()">Book Slot</button>
+            
+            <div id="bookingConfirmation" class="booking-confirmation"></div>
+        </form>
+    </div>
+
+    <script>
+        function bookSlot() {
+            // Get all required fields
+            const requiredFields = document.querySelectorAll('[required]');
+            let isValid = true;
+
+            // Check if all required fields are filled
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    isValid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            // Mobile number specific validation
+            const mobileField = document.getElementById('mobile');
+            if (!/^[0-9]{10}$/.test(mobileField.value)) {
+                isValid = false;
+                mobileField.style.borderColor = 'red';
+            }
+
+            // If all fields are valid, show booking confirmation
+            if (isValid) {
+                const confirmationDiv = document.getElementById('bookingConfirmation');
+                confirmationDiv.textContent = 'Slot booked successfully!';
+            }
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+</body>
+</html>

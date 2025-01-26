@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Services Landing Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .landing-page {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("images/hospitals.jpg");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 3;
+        }
+        .nav-buttons button {
+            background-color: rgba(255,255,255,0.7);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .search-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            z-index: 2;
+            color: white;
+        }
+        .search-box input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-box button {
+            width: 50%;
+            padding: 10px;
+            background-color: #073a70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .first-aid-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .first-aid-buttons {
+            width: 30%;
+        }
+        .first-aid-buttons button {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .first-aid-buttons button:hover {
+            background-color: #e0e0e0;
+        }
+        .first-aid-buttons button.active {
+            background-color: #073a70;
+            color: white;
+        }
+        .first-aid-content {
+            width: 50%;
+            height: 800px;
+            overflow-y: hidden;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        
+        /* Page Container */
+        .landing-page {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        
+        /* Background Image */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("images/hospitals.jpg");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        h1 {
+            position: relative;
+            z-index: 10;
+            color: rgb(8, 83, 168);
+            left:5%;
+            font-family:'Times New Roman',serif;
+            font-weight: bold;
+        }
+        h2 {
+            
+            color:#fbfcfd;
+            font-family:'Georgia',serif;
+            font-weight: bold;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 20;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav-buttons a:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Search Box */
+        .search-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            z-index: 2;
+            color: white;
+        }
+
+        .search-box h2 {
+            margin-bottom: 20px;
+        
+            font-size: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            width: 30%;
+            padding: 10px;
+            background-color: #073a70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-box button:hover {
+            background-color: #094a90;
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page Container -->
+    <div class="landing-page">
+        <!-- Background Image -->
+        <div class="background-image"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button id="firstAidBtn">First Aid</button>
+            <a href="vaccine.html">Vaccination</a>
+            <a href="help.html">Help</a>
+        </div>
+        <div>
+            <h1>MEDEVO +</h1>
+
+        </div>
+        
+        <!-- Search Box -->
+        <div class="search-box">
+            <h2>Find Your Doctor</h2>
+            <form action="doctorlist_profile.html" method="GET">
+                <label for="condition" style="display:none;">Medical Condition</label>
+                <input id="condition" type="text" name="condition" placeholder="Medical Condition" required>
+                
+                <label for="location" style="display:none;">Location</label>
+                <input id="location" type="text" name="location" placeholder="Location" required>
+                
+                <button type="submit">Proceed</button>
+            </form>
+        </div>
+    </div>
+    <div id="firstAidModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>First Aid Guides</h2>
+            <div class="first-aid-container">
+                <div class="first-aid-buttons" id="firstAidButtons"></div>
+                <div class="first-aid-content" id="firstAidContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- Search Box -->
+        <script>
+            const firstAidGuides = [
+                {
+                    title: 'Bleeding',
+                    content: `
+                        1. Apply Pressure: Use a clean cloth or bandage to apply direct pressure to the wound.
+                        2. Elevate: If possible, raise the injured area above heart level to reduce bleeding.
+                        3. Do Not Remove Objects: If an object is embedded in the wound, don't remove it. Instead, apply pressure around it.
+                        4. Secure Bandage: Once bleeding is controlled, secure with a bandage.
+                    `
+                },
+                {
+                    title: 'Burns',
+                    content: `
+                        1. Cool the Burn: Run cool (not ice-cold) water over the burn for 10-20 minutes.
+                        2. Protect the Area: Cover with a clean, non-stick dressing or cloth.
+                        3. Do Not Use: Avoid ointments, butter, or oils on burns.
+                        4. Seek Help: For large or severe burns, call emergency services.
+                    `
+                },
+                {
+                    title: 'Choking',
+                    content: `
+                        1. Encourage Coughing: If the person can cough, let them try to clear the obstruction.
+                        2. Heimlich Maneuver (for adults and children over 1 year old):
+                           - Stand behind the person and place your arms around their waist.
+                           - Make a fist and place it just above the navel.
+                           - Perform quick upward thrusts until the object is expelled.
+                        3. Infant Choking: Perform back blows and chest thrusts.
+                    `
+                },
+                {
+                    title: 'CPR',
+                    content: `
+                        For Adults:
+                        1. Check responsiveness and breathing.
+                        2. Call for help (or send someone to call 911).
+                        3. Perform chest compressions:
+                           - Place hands in the center of the chest and push hard and fast (100–120 compressions per minute).
+                           - Allow the chest to rise fully between compressions.
+                        
+                        For Children and Infants: Use two fingers or one hand for compressions, depending on size.
+                    `
+                },
+                {
+                    title: 'Fractures',
+                    content: `
+                        1. Immobilize the Area: Keep the injured part as still as possible. Use a splint if needed.
+                        2. Do Not Move: Avoid realigning or moving the bone.
+                        3. Apply Ice: Use a cold pack to reduce swelling, but avoid direct contact with the skin.
+                        4. Seek Medical Attention: Go to the nearest hospital.
+                    `
+                },
+                {
+                    title: 'Shock',
+                    content: `
+                        1. Lay the Person Down: On their back, with legs elevated if there's no head, neck, or back injury.
+                        2. Keep Warm: Cover with a blanket to maintain body temperature.
+                        3. Stay Calm: Reassure the person and call for help.
+                    `
+                },
+                {
+                    title: 'Poisoning',
+                    content: `
+                        1. Identify the Poison: If possible, determine what was ingested.
+                        2. Call Poison Control: Contact your local poison helpline immediately.
+                        3. Do Not Induce Vomiting: Unless instructed by a medical professional.
+                    `
+                },
+                {
+                    title: 'Sprains and Strains',
+                    content: `
+                        Follow the RICE method:
+                        R: Rest the injured area.
+                        I: Ice for 15-20 minutes every 1-2 hours.
+                        C: Compress with a bandage to reduce swelling.
+                        E: Elevate the injured limb above heart level.
+                    `
+                },
+                {
+                    title: 'Nosebleeds',
+                    content: `
+                        1. Sit and Lean Forward: Do not tilt the head back.
+                        2. Pinch the Nose: Pinch the soft part of the nose for 10-15 minutes.
+                        3. Apply Cold: Place a cold compress on the bridge of the nose.
+                    `
+                },
+                {
+                    title: 'Allergic Reactions',
+                    content: `
+                        1. Mild Reaction: Administer an antihistamine (if available).
+                        2. Severe Reaction (Anaphylaxis):
+                           - Use an epinephrine injector (EpiPen) if available.
+                           - Call emergency services immediately.
+                    `
+                }
+            ];
+    
+            const modal = document.getElementById("firstAidModal");
+            const btn = document.getElementById("firstAidBtn");
+            const span = document.getElementsByClassName("close")[0];
+            const buttonsContainer = document.getElementById("firstAidButtons");
+            const contentContainer = document.getElementById("firstAidContent");
+    
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+    
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    
+            function createButtons() {
+                firstAidGuides.forEach((guide, index) => {
+                    const button = document.createElement("button");
+                    button.textContent = guide.title;
+                    button.onclick = function() {
+                        showContent(index);
+                        setActiveButton(this);
+                    };
+                    buttonsContainer.appendChild(button);
+                });
+            }
+    
+            function showContent(index) {
+                contentContainer.innerHTML = `<h3>${firstAidGuides[index].title}</h3><pre>${firstAidGuides[index].content}</pre>`;
+            }
+    
+            function setActiveButton(activeButton) {
+                const buttons = buttonsContainer.getElementsByTagName("button");
+                for (let button of buttons) {
+                    button.classList.remove("active");
+                }
+                activeButton.classList.add("active");
+            }
+    
+            createButtons();
+            showContent(0);
+            setActiveButton(buttonsContainer.getElementsByTagName("button")[0]);
+        </script>
+</body>
+</html>

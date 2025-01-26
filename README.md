@@ -8,9 +8,9 @@
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Nandana Sasikumar] - [GEC THRISSUR]
+- Member 2: [Archana.K ] - [GEC THRISSUR]
+- Member 3: [Cilla Elsa Binoy] - [College]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
