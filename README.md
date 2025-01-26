@@ -1,16 +1,15 @@
 
-
-# [Project Name] 🎯
+# Medivo+ 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: YSL
 
 
 ### Team Members
-- Member 1: [Nandana Sasikumar] - [GEC THRISSUR]
-- Member 2: [Archana.K ] - [GEC THRISSUR]
-- Member 3: [Cilla Elsa Binoy] - [GEC THRISSUR]
+- Member 1: Nandana Sasikumar - GEC THRISSUR
+- Member 2: Archana.K - GEC THRISSUR
+- Member 3: Cilla Elsa Binoy - GEC THRISSUR
 
 ### Hosted Project Link
 https://tink-her-hack-3-temp-phi.vercel.app/
